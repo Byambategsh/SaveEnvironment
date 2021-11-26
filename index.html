@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe Environment</title>
+    <link rel="stylesheet" href="style.css"/>
+    <script>
+        function allowDrop(ev) {
+        ev.preventDefault();
+        }
+        
+        function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+        }
+        
+        function drop(ev) {
+        
+        var data = ev.dataTransfer.getData("text");
+        ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
+
+</head>
+<body>
+    <div class="bg"></div>
+    <header class="waste">
+        <!-- <h1>Таны өдөр тутмын зуршил байгаль хамгаална.</h1> -->
+    </header>
+    <main class="recycleBin">
+        <img id="drag1" src="img/paperWastes.svg" draggable="true" ondragstart="drag(event)">
+        <img id="drag2" src="img/metalWaste.svg" draggable="true" ondragstart="drag(event)" >
+        <img id="drag3" src="img/glassWaste.svg" draggable="true" ondragstart="drag(event)" >
+        <img id="drag4" src="img/elecWaste.svg" draggable="true" ondragstart="drag(event)" >
+        <img id="drag5" src="img/plasticWaste.svg" draggable="true" ondragstart="drag(event)" >
+        <img id="drag6" src="img/organicWaste.svg" draggable="true" ondragstart="drag(event)">   
+    </main>
+    <footer>
+        <div id="paper" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img src="img/Paper.svg" class="bin">
+        </div>
+        <div id="plastic" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img src="img/glass.svg" class="bin">
+        </div>
+        <div id="glass" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img src="img/plastic.svg" class="bin">
+        </div>
+        <div id="metal" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img src="img/metal.svg" class="bin">
+        </div>
+        <div id="metal" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img src="img/organic.svg" class="bin">
+        </div>
+        <div id="metal" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img src="img/eWaste.svg" class="bin">
+        </div>
+    </footer>
+</body>
+</html>
