@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Save Environment</title>
     <link rel="stylesheet" href="style.css"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         function allowDrop(ev) {
@@ -29,6 +33,7 @@
 
             if (data ==  ev.target.getAttribute("data-bin-type")) {
                 console.log("match");
+                
                 // const msg = document.createElement("h1");
                 // const node = document.createTextNode(":)");
                 // msg.appendChild(node);
@@ -75,16 +80,13 @@
                     document.getElementById("msg5").style.marginLeft = "-4vw";
                     console.log(" glass msg garav");
                 }
-                else if(ev.target.getAttribute("data-bin-type") == "e-waste"){
+                else {
                     document.getElementById("msg6").innerHTML = "<h1>:)</h1>";
                     document.getElementById("msg6").style.fontSize = "2em"; 
                     document.getElementById("msg6").style.color = "white";
                     document.getElementById("msg6").style.display = "initial";
                     document.getElementById("msg6").style.marginLeft = "-4vw";
-                } 
-                else{
-                    ev.preventDefault();
-                }   
+                }
             
             }else{               
                 console.log("no match");
@@ -128,16 +130,13 @@
                     document.getElementById("msg5").style.marginLeft = "-4vw";
                     console.log(" glass msg garav");
                 }
-                else if(ev.target.getAttribute("data-bin-type") == "e-waste"){
+                else{
                     document.getElementById("msg6").innerHTML = "<h1>:(</h1>";
                     document.getElementById("msg6").style.fontSize = "2em"; 
                     document.getElementById("msg6").style.color = "black";
                     document.getElementById("msg6").style.display = "initial";
                     document.getElementById("msg6").style.marginLeft = "-4vw";
-                }
-                else{
-                    ev.preventDefault();
-                }  
+                } 
             }
 
             // document.getElementsByClassName("msg").innerHTML = "<h1>:)</h1>";
@@ -158,22 +157,22 @@
 </head>
 <body>
     <section class="container" id="bg1">
-        <h1 class="txt", style="color: aliceblue;">Таны өдөр тутмын энгийн зуршил байгаль хамгаална гэдэгт итгэх үү?</h1>
+        <h1 class="txt", style="color: aliceblue;">Таны өдөр тутмын энгийн зуршил <br>байгаль хамгаална гэдэгт итгэх үү?</h1>
     </section>
     <section class="container" id="bg2">
 
         <main class="waste">
-                <img id = "paper" class="paper" src="img/paperWastes.svg" draggable="true" ondragstart="drag(event)">
-                <img id = "paper" class="paper" src="img/paperWastes.svg" draggable="true" ondragstart="drag(event)">
-                <img id = "metal" class="metal" src="img/metalWaste.svg" draggable="true" ondragstart="drag(event)" >
+                <img id = "paper" class="paper" class="waste" src="img/paperWastes.svg" draggable="true" ondragstart="drag(event)">
+                
+                <img id = "metal" class="metal" class="waste" src="img/metalWaste.svg" draggable="true" ondragstart="drag(event)" >
 
-                <img id = "glass" class="glass" src="img/glassWaste.svg" draggable="true" ondragstart="drag(event)" >
+                <img id = "glass" class="glass" class="waste" src="img/glassWaste.svg" draggable="true" ondragstart="drag(event)" >
 
-                <img id = "eWaste" class="eWaste" src="img/elecWaste.svg" draggable="true" ondragstart="drag(event)">
+                <img id = "eWaste" class="eWaste" class="waste" src="img/elecWaste.svg" draggable="true" ondragstart="drag(event)">
 
-                <img id = "plastic" class="plastic" src="img/plasticWaste.svg" draggable="true" ondragstart="drag(event)" >
+                <img id = "plastic" class="plastic" class="waste" src="img/plasticWaste.svg" draggable="true" ondragstart="drag(event)" >
 
-                <img id = "organic" class="organic" src="img/organicWaste.svg" draggable="true" ondragstart="drag(event)">
+                <img id = "organic" class="organic" class="waste" src="img/organicWaste.svg" draggable="true" ondragstart="drag(event)">
         </main>
         <footer>
 
@@ -192,13 +191,13 @@
             <img class="bin" id = "organic" data-bin-type="organic" ondrop="drop(event)" ondragover="allowDrop(event)" src="img/organic.svg">
             <h1 id="msg5" class="msg">null</h1>
 
-            <img class="bin" id = "eWaste" data-bin-type="e-waste" ondrop="drop(event)" ondragover="allowDrop(event)" src="img/eWaste.svg">
+            <img class="bin" id = "eWaste" data-bin-type="eWaste" ondrop="drop(event)" ondragover="allowDrop(event)" src="img/eWaste.svg">
             <h1 id="msg6" class="msg">null</h1>
         </footer>
     </section>
     <section class="container" id="bg3">
-        <h1 class="txt">Энэ бол зүгээр л нэг сав гэж 8 тэрбум хүн хэлдэг.
-            <h1 class="txt">Бидэнд хоёр дах дэлхий байхгүй :(</h1>
+        <h1 class="txt" id="socialMsg">Энэ бол зүгээр л нэг сав гэж 7 тэрбум хүн хэлдэг.
+            <br>Бидэнд хоёр дах дэлхий байхгүй...</h1>
     </section>
 </body>
 </html>
